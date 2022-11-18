@@ -878,6 +878,7 @@ $endif$
 %%
 
 \usepackage[final]{pdfpages}
+\newcommand{\drv}{\textrm{d}}
 
 \begin{document}
 

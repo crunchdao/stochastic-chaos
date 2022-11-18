@@ -2,7 +2,7 @@
 title: "Interplay between Chaos and Stochasticity in Celestial Mechanics"
 subtitle: ""
 author: [Matteo Manzi, Stefano Guidolotti, Mattia Petrini]
-date: "2022/07/21"
+date: "2022/07/31"
 lang: "en"
 colorlinks: true
 titlepage: true
@@ -14,13 +14,8 @@ header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
 footer-left: "Interplay between Chaos and Stochasticity in Celestial Mechanics"
 footer-right: "CrunchDAO"
-abstract: "This work is focused on the development of an open-source Julia-based repository for the analysis of chaos in dynamical systems, 
-in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE).
-The novel application of this scalar field for stochastic processes allows one to generalize the definition of chaos in a probabilistic sense.
-This probabilistic generalization is useful for both uncertainty quantification and robust trajectory design.
-Bifurcating phenomena and invariant sets in time-dependent dynamical systems are discussed, particularly in the context of Lagrangian coherent structures."
+abstract: "This work is focused on the development of an open-source Julia-based repository for the analysis of chaos in dynamical systems, in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE). in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE). The novel application of this scalar field for stochastic processes allows one to generalize the definition of chaos in a probabilistic sense. This probabilistic generalization is useful for both of uncertainty quantification, and robust trajectory design. Bifurcating phenomena and invariant sets in time-dependant dynamical systems are discussed, particularly in the context of Lagrangian coherent structures. "
 ---
-
 
 \section{Introduction}
 
@@ -31,9 +26,9 @@ the possibility of designing robust low energy transfer trajectories, not limite
 weak stability boundary for the design of the ballistic captures trajectories in time-dependent dynamical systems; 
 the characterization of diffusion processes in Nearly-Integrable Hamiltonian systems in celestial mechanics. 
 
-Building on \cite{Szebehely82}, \cite{ManziAAS2020, VasileManzi} investigated a probabilistic generalization of chaos, in which uncertainty in initial conditions and dynamical parameters is considered.
+Building on [@Szebehely82], [@ManziAAS2020; @VasileManzi] investigated a probabilistic generalization of chaos, in which uncertainty in initial conditions and dynamical parameters is considered.
 
-Here we generalize, inspired by \cite{Balibrea-Iniesta}, in order to introduce a quantification of chaos for stochastic processes.
+Here we generalize, inspired by [@Balibrea-Iniesta], in order to introduce a quantification of chaos for stochastic processes.
 
 \section{Metodology}
 Given dynamical systems in the form:
@@ -54,25 +49,22 @@ where its relative spectrum can be measured by the FTLE:
     \sigma(\mathbf{x}, \mathbf{p}, T)=\frac{1}{|T|}\ln(\sqrt{\lambda_{\max}(\Delta(\mathbf{x}, \mathbf{p}))})
 \end{equation}
 where $T$ is the time interval associated to the propagation, starting at $t_0$, and $\lambda_{\max}$ is the maximum eigenvalue of the Cauchy-Green Strain Tensor.
-\\ \\
-Generalizing for stochastic differential equations \cite{oksendal}:
+
+Generalizing for stochastic differential equations [@oksendal]:
 \begin{equation}
     \drv \mathbf{X}=\mathbf{f}(\mathbf{X},t) \drv t + \mathbf{G}(\mathbf{X},t) \drv \mathbf{W_t}
 \end{equation}
-where $
-   \mathbf{X},\mathbf{f} \in \mathbb{R}^{n} 
-$,
-$
-    \mathbf{W_t} \in \mathbb{R}^{m}
-$ and
-$
-    \mathbf{G} \in \mathbb{R}^{n \times m}
-$.
+where 
+\begin{equation}
+\mathbf{X},\mathbf{f} \in \mathbb{R}^{n}
+\end{equation}
+\begin{equation}
+\mathbf{W_t} \in \mathbb{R}^{m}, \mathbf{G} \in \mathbb{R}^{n \times m}.
+\end{equation}
 
-The equation consists of two major components. The deterministic drift is denoted as $\mathbf{f}$ and the stochastic diffusion $\mathbf{G}$. $\mathbf{G}$ depends on $m$ Brownian processes expressed as $\mathbf{W_t}$. 
+The equation consists of two major components. The deterministic drift denoted as $\mathbf{f}$ and the stochastic diffusion $\mathbf{G}$. $\mathbf{G}$ depends on $m$ Brownian processes expressed as $\mathbf{W_t}$. 
 It is straightforward to derive the variational equations associated with a Stochastic Differential Equation:
 
-%slide7 Finite-Time Lyapunov Exponent for SDEs
 \begin{equation}
 \drv \frac{\partial \mathbf{X}}{\partial \mathbf{X_0}}=
 \frac{\partial \mathbf{f}}{\partial \mathbf{X}}
@@ -88,11 +80,11 @@ It is straightforward to derive the variational equations associated with a Stoc
 \end{equation}
 
 in which $X$ is a stochastic process, leading the Cauchy-Green Strain tensor to be a random matrix. The analysis
-of its spectrum, leading to the FTLE in Equation \eqref{eq:sftle}, is therefore strictly related to random matrix theory \cite{potters_bouchaud_2020}.
+of its spectrum, leading to the FTLE in Equation \eqref{eq:sftle}, is therefore stricly related with random matrix theory [@potters_bouchaud_2020].
 
 \section{Applications}
 A number of dynamical systems can be analysed using this approach.
-Introduced by B.V. Chirikov in \cite{CHIRIKOV1979263}, one of the most popular mappings in the theory of dynamical systems is the so-called \emph{standard map} \cite{celletti}:
+Introduced by B.V. Chirikov in [@CHIRIKOV1979263], one of the most popular mappings in the theory of dynamical systems is the so-called \emph{standard map} [@celletti]:
 It is defined by the equations:
 \begin{equation}
     \begin{cases}
@@ -105,7 +97,7 @@ The FTLE field of this discrete map is represented in Figure \ref{fig:stdmap}.
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width = .43 \textwidth]{figures/std_map.png}}
+    \fbox{\includegraphics[width = .55 \textwidth]{figures/std_map.png}}
     \caption{Finite-Time Lyapunov Exponents scalar field of the \emph{standard map}.}
     \label{fig:stdmap}
 \end{figure}
@@ -119,23 +111,12 @@ In this case, the FTLE field, associated with an Ordinary Differential Equation,
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width = .43 \textwidth]{figures/ppp_proceeding.png}}
+    \fbox{\includegraphics[width = .55 \textwidth]{figures/ppp_proceeding.png}}
     \caption{Finite-Time Lyapunov Exponents scalar field of the \emph{periodically-perturbed pendulum}.}
     \label{fig:ppp}
 \end{figure}
+ 
 
-% %slide5 The Double Gyre
-% The double gyre model consists of a pair of counter-rotating gyres, with a time-periodic perturbation. \\ The system is modelled as a first order differential equation:
-
-% \begin{equation}
-% \dot{\mathbf{z}} =\frac{\drv}{\drv t}\begin{bmatrix}
-%     x \\
-%     y  \end{bmatrix}=\pi A\begin{bmatrix}
-%     -\sin(\pi f(x,t))\cos(\pi y) \\
-%     \cos(\pi f(x,t))\sin(\pi y)\frac{df}{dx}  \end{bmatrix} 
-% \end{equation}
-
-%slide8 Stochastic Duffing oscillator
 As a final example, the Duffing oscillator:
 \begin{equation}
 \ddot{x}=\alpha \dot{x}+\beta x+\gamma x^3 + \epsilon\cos{t}
@@ -152,16 +133,16 @@ The FTLE field depicted in Figure \ref{fig:duff} is here associated with a Stoch
 
 \begin{figure}[h]
     \centering
-    \fbox{\includegraphics[width = .43 \textwidth]{figures/duffing.png}}
+    \fbox{\includegraphics[width = .55 \textwidth]{figures/duffing.png}}
     \caption{Finite-Time Lyapunov Exponents scalar field of the \emph{Stochastic Duffing oscillator}.}
     \label{fig:duff}
 \end{figure}
 
 \section{Conclusions and Recommendations}
-Diffusion mechanisms arise both from chaotic behavior and stochastic perturbations. 
+Diffusion mechanisms arise both from chaotic behaviour and stochastic perturbations. 
 But there is also an interplay between the two, reducing the Lyapunov time of dynamical systems under investigation.
-A stochastic framework for celestial mechanics has been introduced, among others, in \cite{manzibosch}, motivates the use of a 
-stochastic index for chaotic motion: results on the stability of planetary systems could be influenced by the integration of stochastic 
+A stochastic framework for celestial mechanics has been introduced, among others, in \cite{manzibosch}, motivates the use of the a 
+stochastic index for chaotic motion: results on the stabilty of planetary systems could be influenced by the integration of stochastic 
 perturbations.
 Finally, as a recommendation for future works, the integration of these developments and results in the library \textit{DynamicalSystems.jl} appears desirable.
 
