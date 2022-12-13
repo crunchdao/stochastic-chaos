@@ -14,14 +14,14 @@ header-left: "\\hspace{1cm}"
 header-right: "Page \\thepage"
 footer-left: "Interplay between Chaos and Stochasticity in Celestial Mechanics"
 footer-right: "CrunchDAO"
-abstract: "This work is focused on the development of an open-source Julia-based repository for the analysis of chaos in dynamical systems, in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE). in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE). The novel application of this scalar field for stochastic processes allows one to generalize the definition of chaos in a probabilistic sense. This probabilistic generalization is useful for both of uncertainty quantification, and robust trajectory design. Bifurcating phenomena and invariant sets in time-dependant dynamical systems are discussed, particularly in the context of Lagrangian coherent structures. "
+abstract: "This work is focused on the development of an open-source Julia-based repository for the analysis of chaos in dynamical systems, in particular for systems described by ordinary and stochastic differential equations, using Finite-Time Lyapunov exponents (FTLE). The novel application of this scalar field for stochastic processes allows one to generalize the definition of chaos in a probabilistic sense. This probabilistic generalization is useful for both uncertainty quantification and robust trajectory design. Bifurcating phenomena and invariant sets in time-dependent dynamical systems are discussed, particularly in the context of Lagrangian coherent structures. "
 ---
 
 \section{Introduction}
 
 Chaotic behavior is omnipresent in celestial mechanics dynamical systems and it is relevant for both the understanding and 
-leveraging the stability of planetary systems, inner solar system in particular \cite{celletti}. 
-The quantification of the probability of impacts of near Earth objects after close encounters with celestial bodies; 
+leveraging the stability of planetary systems, the inner solar system in particular [@celletti]. 
+The quantification of the probability of impacts of near-Earth objects after close encounters with celestial bodies; 
 the possibility of designing robust low energy transfer trajectories, not limited to invariant manifolds but also leveraging the 
 weak stability boundary for the design of the ballistic captures trajectories in time-dependent dynamical systems; 
 the characterization of diffusion processes in Nearly-Integrable Hamiltonian systems in celestial mechanics. 
@@ -62,7 +62,7 @@ where
 \mathbf{W_t} \in \mathbb{R}^{m}, \mathbf{G} \in \mathbb{R}^{n \times m}.
 \end{equation}
 
-The equation consists of two major components. The deterministic drift denoted as $\mathbf{f}$ and the stochastic diffusion $\mathbf{G}$. $\mathbf{G}$ depends on $m$ Brownian processes expressed as $\mathbf{W_t}$. 
+The equation consists of two major components. The deterministic drift is denoted as $\mathbf{f}$ and the stochastic diffusion $\mathbf{G}$. $\mathbf{G}$ depends on $m$ Brownian processes expressed as $\mathbf{W_t}$. 
 It is straightforward to derive the variational equations associated with a Stochastic Differential Equation:
 
 \begin{equation}
@@ -80,7 +80,7 @@ It is straightforward to derive the variational equations associated with a Stoc
 \end{equation}
 
 in which $X$ is a stochastic process, leading the Cauchy-Green Strain tensor to be a random matrix. The analysis
-of its spectrum, leading to the FTLE in Equation \eqref{eq:sftle}, is therefore stricly related with random matrix theory [@potters_bouchaud_2020].
+of its spectrum, leading to the FTLE in Equation \eqref{eq:sftle}, is therefore strictly related to random matrix theory [@potters_bouchaud_2020].
 
 \section{Applications}
 A number of dynamical systems can be analysed using this approach.
@@ -139,10 +139,10 @@ The FTLE field depicted in Figure \ref{fig:duff} is here associated with a Stoch
 \end{figure}
 
 \section{Conclusions and Recommendations}
-Diffusion mechanisms arise both from chaotic behaviour and stochastic perturbations. 
+Diffusion mechanisms arise both from chaotic behavior and stochastic perturbations. 
 But there is also an interplay between the two, reducing the Lyapunov time of dynamical systems under investigation.
-A stochastic framework for celestial mechanics has been introduced, among others, in \cite{manzibosch}, motivates the use of the a 
-stochastic index for chaotic motion: results on the stabilty of planetary systems could be influenced by the integration of stochastic 
+A stochastic framework for celestial mechanics has been introduced, among others, in [@manzibosch], motivates the use of a 
+stochastic index for chaotic motion: results on the stability of planetary systems could be influenced by the integration of stochastic 
 perturbations.
 Finally, as a recommendation for future works, the integration of these developments and results in the library \textit{DynamicalSystems.jl} appears desirable.
 
